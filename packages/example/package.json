@@ -1,0 +1,58 @@
+{
+  "name": "@shellicar/example",
+  "private": false,
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "author": "Stephen Hellicar",
+  "description": "Example package",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shellicar/REPO_NAME.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.cts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "index": [
+        "./dist/esm/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "*.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "type-check": "tsc -p tsconfig.check.json"
+  },
+  "devDependencies": {
+    "@shellicar/build-clean": "^1.3.0",
+    "@shellicar/build-version": "^1.3.4",
+    "@tsconfig/node24": "^24.0.4",
+    "@types/node": "^25.4.0",
+    "terser": "^5.46.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}
