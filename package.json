@@ -26,6 +26,6 @@
     "lefthook": "^2.1.4",
     "npm-check-updates": "^19.6.5",
     "syncpack": "^14.2.0",
-    "turbo": "^2.8.19"
+    "turbo": "^2.9.14"
   }
 }
